@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <servlet>
+    <description></description>
+    <servlet-name>Controller</servlet-name>
+    <servlet-class>mvc.controller.Controller</servlet-class>
+    <init-param>
+      <param-name>path</param-name>
+      <param-value>D:\김태호(오후)\jspkh\jsp\WebContent\WEB-INF\properties\commend.properties</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Controller</servlet-name>
+    <url-pattern>*.nhn</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <servlet-name>board</servlet-name>
+    <servlet-class>ch19.controller.ControllerAction</servlet-class>
+    <init-param>
+      <param-name>propertyConfig</param-name>
+      <param-value>D:\김태호(오후)\jspkh\jsp\WebContent\WEB-INF\properties\CommandPro.properties</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>board</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <servlet-name>boardex</servlet-name>
+    <servlet-class>board.controller.ControllerAction</servlet-class>
+    <init-param>
+      <param-name>propertyConfig</param-name>
+      <param-value>D:\김태호(오후)\jspkh\jsp\WebContent\WEB-INF\properties\CommandBoard.properties</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>boardex</servlet-name>
+    <url-pattern>*.wo</url-pattern>
+  </servlet-mapping>
+</web-app>
