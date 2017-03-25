@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>index.html</title>
+</head>
+<body>
+<!-- 
+	서버의 영역(Scope) => 4개의 영역이 있다
+	
+	1.page 영역 : 하나의 페이지에서만 유효한 영역
+	2.request 영역 : 응답하기 전까지 유효한(request 가 살아 있을때까지) 유효한
+	영역
+	3.session 영역 : 웹브라우저를 닫기전까지 유효한 영역, 일정시간 (기본30분)이 
+	지나면 웹 브라우저를 닫지 않아도 세션 영역은 파괴된다.
+	4.application 영역 : 서버를 내릴때까지 유효하며 모든 서블릿(jsp) 가 공유하는 
+	영역
+	
+	[ 원하는 영역에 값을 저장 혹은 불러오는 방법]
+	1. 저장   =>  setAttribute( key 값 , value 값);
+	2. 불러오기  =>  getAttribute( key 값);
+ -->
+ <ul>
+ 	<li><a href="requestTest/test.html">requestScope 테스트</a></li>
+ 	<li><a href="/Day03_Scope/sessionTest/test.html">sessionScope 테스트</a></li>	
+ 	<li><a href="applicationTest/test.html">appliactionScope 테스트</a></li>		
+ </ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

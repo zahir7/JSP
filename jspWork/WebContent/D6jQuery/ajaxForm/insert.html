@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>insert.html</title>
+<script type="text/javascript" src="../js/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="../js/jquery.form.js"></script>
+<script type="text/javascript">
+	//윈도우 로딩이 끝났을때 호출되는 함수 등록
+	window.onload=function(){
+		//id 가 myForm 인 폼의  submit 버튼을 누르면 비동기방식으로
+		//서버에 전송하기 위한 방법이다.
+		$("#myForm").ajaxForm(function(){
+			//전송이 끝나면 호출되는 함수
+			alert("서버로 전송하였습니다.");
+		});
+	}
+</script>
+</head>
+<body>
+<!-- 서버로 비동기 전송하기 위한 폼 -->
+<form id="myForm" method="get" action="insert.jsp">
+	번호<input type="text" name="num" id="num"/><br/>
+	이름<input type="text" name="name" id="name"/><br/>
+	주소<input type="text" name="addr" id="addr"/><br/>
+	<input type="submit" value="전송"/>
+</form>
+</body>
+</html>
+
+

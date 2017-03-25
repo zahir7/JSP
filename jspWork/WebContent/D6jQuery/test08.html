@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+ <style>
+	div {
+	   position: relative;
+	   background-color: #abc;
+	   width: 40px;
+	   height: 40px;
+	   float: left;
+	   margin: 5px;
+	}
+</style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+  
+<p><button id="go">시작</button></p>
+<div class="block"></div> <div class="block"></div>
+<div class="block"></div> <div class="block"></div>
+<div class="block"></div> <div class="block"></div>
+
+<script>
+	$( "#go" ).click(function(){ ////클릭이벤트 등록
+	  
+		$( ".block:first" ).animate({ //애니매이션 효과 주기
+	    left: 100
+	  }, {
+	    duration: 1000,
+	    step: function( now, fx ){
+	      $( ".block:gt(0)" ).css( "left", now );
+	    }
+	  });
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JQuery 시작</title>
+<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+<script type="text/javascript">
+	//문서 로딩이 끝났을때 호출되는 콜백 함수 등록하기.
+	$(document).ready(function(){
+		// * => 모든요소 선택자
+		$("*").css("color", "red");
+		//요소를 선택할때
+		$("p").css("color", "orange");
+		//아이디 명으로 선택할때
+		$("#myDiv").css("color", "blue");
+		//클래스 명으로 선택할때
+		$(".myClass").css("color", "yellow");
+	});
+</script>
+</head>
+<body>
+<h1>JQuery 시작입니다.</h1>
+<p>선택자의 개념이 있습니다.</p>
+<p>어렵지 않아요!</p>
+<div id="myDiv">나의 문단입니다.</div>
+<div class="myClass">클래스 선택자도 있습니다.</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

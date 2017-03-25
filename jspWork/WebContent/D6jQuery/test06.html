@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>animate()</title>
+<style>
+	div {
+		background-color:#bca;
+		width:100px;
+		border:1px solid green;
+	}
+</style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+<button id="go">눌러보세요</button>
+<div id="block">애니매이션 입니다.</div>
+<script>
+
+/* 하나의 애니매이션에서 여러개의 효과를 주기 */
+
+$("#go").click(function(){ // id 가 go 인 요소 선택해서 클릭 이벤트를 등록한다.
+  	//클릭 이벤트가 일어났을때 실행되는 부분
+	$("#block").animate({//id 가 block 인 요소를 선택해서 애니메이션 효과를 주어라.	
+	    width: "70%", //폭 부모의 70%
+	    opacity: 0.4,	//투명도
+	    marginLeft: "0.6in", //왼쪽 마진
+	    fontSize: "3em", //글자크기는 부모의 기본크기의 3배
+	    borderWidth: "10px"	//경계선 굵기
+  	}, 1500 );	//1.5 초 동안 위의 작업을 하라.
+});
+</script>
+
+</body>
+</html>

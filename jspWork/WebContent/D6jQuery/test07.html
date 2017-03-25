@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style>
+	div {
+	  position:absolute;
+	  background-color:#abc;
+	  left:50px;
+	  width:90px;
+	  height:90px;
+	  margin:5px;
+	}
+</style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+  <button id="left">왼쪽으로</button> 
+  <button id="right">오른쪽으로</button>
+<div class="block"></div>
+<script>
+	//오른쪽 버튼을 클릭했을때 실행되는 함수 등록
+	$("#right").click(function(){
+  		//클래스 명이 block 인 요소를 선택해서 좌측 좌표를 현재 좌표에서 + 50만큼 
+  		//애니메이션 효과를 주면서 천천히 증가 시켜라
+		$(".block").animate({"left": "+=50px"}, "slow");
+	
+	});
+	//왼쪽 버튼을 클릭했을때 실행되는 함수 등록
+	$("#left").click(function(){
+  		$(".block").animate({"left": "-=50px"}, "slow");
+	});
+
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>비동기 통신으로 서버에서 JSON 다운로드 하기.</title>
+<script type="text/javascript" src="../js/jquery-1.7.1.js"></script>
+<script type="text/javascript">
+	//윈도우 로딩이 끝났을때 호출되는 함수
+	window.onload=function(){
+		$("#myButton").click(getMember);
+	}
+	//회원정보를 가져오는 함수
+	function getMember(){
+		//서버에서 JSON 데이터를 비동기 통신으로 가져오기
+		$.getJSON("getList.jsp", function(data){
+			
+			//data 변수에 json 연관 배열이 들어있다
+			for(var i=0; i < data.members.length ; i++){
+				var str="";
+				var mem=data.members[i];
+				str +="번호"+mem.num+" ";
+				str +="이름"+mem.name+" ";
+				str +="주소"+mem.addr;
+				//콘솔창에 출력해보기
+				console.log(str);
+				$("<p/>",{
+					"class":"my-new-class",
+					html: str,
+					"id" : "num"+mem.num
+				}).appendTo("div");
+			}
+			
+		});
+	}
+</script>
+</head>
+<body>
+<button id="myButton">회원정보 가져오기</button>
+<div id="myMember"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

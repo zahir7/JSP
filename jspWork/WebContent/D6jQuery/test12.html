@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>fade out</title>
+ <style>
+  span { cursor:pointer; }
+  span.hilite { background:yellow; }
+  div { display:inline; color:red; }
+  </style>
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+  <h3>Find the modifiers - </h3>
+  <div> </div>
+  <p>
+  If you <span>really</span> want to go outside
+  <span>in the cold</span> then make sure to wear
+  your <span>warm</span> jacket given to you by
+  your <span>favorite</span> teacher.
+  </p>
+<script>
+
+  	$("span").click(function () {
+  		
+  		$(this).fadeOut(1000, function () {
+	 	 	
+  			$("div").text("'" + $(this).text() + "' has faded!");
+	  		$(this).remove();
+  		});
+  	});
+  	//span 요소에 마우스가 덮었거나 빠져 나갔을때 실행되는 함수를 등록
+  	$("span").hover(function () { 
+  		$(this).addClass("hilite");
+	  }, function () {
+	  $(this).removeClass("hilite");
+  	});
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>dataup.html</title>
+<script type="text/javascript" src="../js/jquery-1.7.1.js"></script>
+<script type="text/javascript">
+ window.onload=function(){
+  //버튼을 클릭하면 실행되는 함수를 등록한다.
+  $("#myButton").click(dataup);
+ }
+ var num=0;
+ function dataup(){
+  num++;
+  //포스트 방식으로 서버에 비동기데이타 전송하기
+  $.post("dataup.jsp",{name:$("#name").val(), msg:$("#msg").val() },
+    	//전송성공한후 실행되는 함수 data 매개 변수에는 서버가 보낸 data 가 들어있다.
+		function(data){
+    	alert(data);
+    }
+  );
+ }
+</script>
+</head>
+<body>
+<button id="myButton">서버에 전송</button>
+작성자<input type="text" id="name"/>
+서버에 전송할 말:<input type="text" id="msg"/>
+</body>
+</html> 

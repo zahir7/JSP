@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JQuery 시작</title>
+<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+<script type="text/javascript">
+	//문서 로딩이 끝났을때 호출되는 콜백 함수 등록하기.
+	$(document).ready(function(){
+		setInterval(doSomething , 1000);
+	});
+	function doSomething(){
+		var value= $("select > option:selected").val();
+		//콘솔에 출력하기.
+		console.log(value);
+	}
+</script>
+</head>
+<body>
+<form>
+	<select>
+		<option>사과</option>
+		<option>배</option>
+		<option>오랜지</option>
+		<option>고양이</option>
+		<option>김태호</option>
+	</select>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
